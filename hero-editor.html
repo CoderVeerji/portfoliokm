@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#26141A">
+  <title>Kashish Complete Hero Editor</title>
+  <link rel="stylesheet" href="hero-editor.css">
+  <script defer src="hero-editor.js"></script>
+</head>
+<body>
+  <header class="editor-bar">
+    <div class="editor-title"><strong>Complete Hero Editor</strong><span>Every visible layer is editable</span></div>
+    <div class="editor-actions">
+      <button type="button" data-device="desktop" aria-pressed="true">Desktop</button>
+      <button type="button" data-device="mobile" aria-pressed="false">Mobile</button>
+      <button type="button" id="reset-element">Reset element</button>
+      <button type="button" id="reset-all">Reset view</button>
+      <button class="primary" type="button" id="copy">Copy Settings</button>
+    </div>
+  </header>
+
+  <main class="workspace">
+    <section class="stage-wrap" aria-label="Editable hero preview">
+      <div class="canvas-shell">
+        <div class="canvas" id="canvas">
+          <svg class="hero-shape" id="hero-shape" aria-hidden="true" preserveAspectRatio="none"><path id="hero-path"></path></svg>
+          <div class="header-shape" id="header-shape" title="Drag navbar box to move">
+            <span class="nav-box-label">Navbar box</span>
+            <i class="nav-resize-handle" id="nav-resize-handle" title="Drag to resize navbar"></i>
+          </div>
+
+          <div class="editable-element" data-key="brand"><span class="content">Kashish Goel</span><i class="resize-handle"></i></div>
+          <div class="editable-element" data-key="work"><span class="content">Work</span><i class="resize-handle"></i></div>
+          <div class="editable-element" data-key="about"><span class="content">About</span><i class="resize-handle"></i></div>
+          <div class="editable-element" data-key="contact"><span class="content">Contact</span><i class="resize-handle"></i></div>
+          <div class="editable-element" data-key="instagram"><span class="content">◎ Instagram</span><i class="resize-handle"></i></div>
+
+          <div class="editable-element" data-key="name"><span class="content">KASHISH GOEL</span><i class="resize-handle"></i></div>
+          <div class="editable-element" data-key="role1"><span class="content">INTERIOR DESIGNER</span><i class="resize-handle"></i></div>
+          <div class="editable-element" data-key="role2"><span class="content">SPATIAL DESIGNER</span><i class="resize-handle"></i></div>
+          <div class="editable-element" data-key="role3"><span class="content">FABRIC &amp; FURNISHING STYLIST</span><i class="resize-handle"></i></div>
+          <div class="editable-element" data-key="intro"><span class="content">Interior designer and stylist whose path spans Amity University, Hans &amp; Associates and an MA in Edinburgh, with a focus on sensory, context-led homes at Sable House Studio.</span><i class="resize-handle"></i></div>
+
+          <button class="curve-handle curve-left" data-curve="curveLeft" type="button"><span>Left</span></button>
+          <button class="curve-handle curve-center" data-curve="curveCenter" type="button"><span>Center</span></button>
+          <button class="curve-handle curve-right" data-curve="curveRight" type="button"><span>Right</span></button>
+        </div>
+      </div>
+      <p class="tip">Move: element drag karo · Resize: blue dot drag karo · Edit text: double-click · Curve: teen red points upar–niche drag karo.</p>
+    </section>
+
+    <aside class="panel">
+      <section class="control-section">
+        <h2>Element</h2>
+        <label>Choose layer
+          <select id="element-select">
+            <optgroup label="Navbar">
+              <option value="brand">Brand</option><option value="work">Work</option><option value="about">About</option><option value="contact">Contact</option><option value="instagram">Instagram</option>
+            </optgroup>
+            <optgroup label="Hero">
+              <option value="name">Kashish Goel heading</option><option value="role1">Interior Designer</option><option value="role2">Spatial Designer</option><option value="role3">Fabric Stylist</option><option value="intro">Introduction</option>
+            </optgroup>
+          </select>
+        </label>
+        <label>Text
+          <textarea id="text" rows="3"></textarea>
+        </label>
+        <label class="check"><input id="visible" type="checkbox"> Show this element</label>
+      </section>
+
+      <section class="control-section two-columns">
+        <h2>Position &amp; size</h2>
+        <label>X <output id="x-output"></output><input id="x" type="range" min="-20" max="120" step="0.1"></label>
+        <label>Y <output id="y-output"></output><input id="y" type="range" min="-20" max="120" step="0.1"></label>
+        <label>Font size <output id="size-output"></output><input id="size" type="range" min="5" max="260" step="1"></label>
+        <label>Box width <output id="width-output"></output><input id="width" type="range" min="2" max="140" step="0.5"></label>
+        <label>Rotation <output id="rotate-output"></output><input id="rotate" type="range" min="-180" max="180" step="1"></label>
+        <label>Layer <output id="z-output"></output><input id="z" type="range" min="2" max="30" step="1"></label>
+      </section>
+
+      <section class="control-section">
+        <h2>Typography</h2>
+        <div class="field-row">
+          <label>Font<select id="font"><option value="Unbounded">Unbounded</option><option value="Poppins">Poppins</option><option value="Arial">Arial</option></select></label>
+          <label>Weight<select id="weight"><option value="300">Light 300</option><option value="400">Regular 400</option><option value="500">Medium 500</option></select></label>
+        </div>
+        <div class="field-row">
+          <label>Align<select id="align"><option value="left">Left</option><option value="center">Center</option><option value="right">Right</option></select></label>
+          <label>Colour<input id="color" type="color"></label>
+        </div>
+        <label>Letter spacing <output id="letter-output"></output><input id="letter" type="range" min="-15" max="30" step="0.1"></label>
+        <label>Line height <output id="line-output"></output><input id="line" type="range" min="0.5" max="3" step="0.05"></label>
+        <label>Opacity <output id="opacity-output"></output><input id="opacity" type="range" min="0" max="100" step="1"></label>
+      </section>
+
+      <section class="control-section">
+        <h2>Box styling</h2>
+        <div class="field-row">
+          <label>Border colour<input id="borderColor" type="color"></label>
+          <label>Background<input id="background" type="color"></label>
+        </div>
+        <label class="check"><input id="fill" type="checkbox"> Use background fill</label>
+        <label>Border width <output id="border-output"></output><input id="border" type="range" min="0" max="10" step="0.5"></label>
+        <label>Corner radius <output id="radius-output"></output><input id="radius" type="range" min="0" max="100" step="1"></label>
+        <label>Inner padding <output id="padding-output"></output><input id="padding" type="range" min="0" max="50" step="1"></label>
+      </section>
+
+      <section class="control-section curve-controls">
+        <h2>Curve — all points move up/down</h2>
+        <label>Left side <output id="curveLeft-output"></output><input id="curveLeft" type="range" min="10" max="110" step="0.5"></label>
+        <label>Center <output id="curveCenter-output"></output><input id="curveCenter" type="range" min="10" max="110" step="0.5"></label>
+        <label>Right side <output id="curveRight-output"></output><input id="curveRight" type="range" min="10" max="110" step="0.5"></label>
+      </section>
+
+      <section class="control-section two-columns">
+        <h2>Navbar box — drag or use controls</h2>
+        <label>X position <output id="navX-output"></output><input id="navX" type="range" min="-20" max="120" step="0.5"></label>
+        <label>Y position <output id="navY-output"></output><input id="navY" type="range" min="-20" max="100" step="0.5"></label>
+        <label>Navbar width <output id="navWidth-output"></output><input id="navWidth" type="range" min="10" max="140" step="0.5"></label>
+        <label>Navbar height <output id="headerHeight-output"></output><input id="headerHeight" type="range" min="2" max="40" step="0.5"></label>
+        <label>Corner radius <output id="headerRadius-output"></output><input id="headerRadius" type="range" min="0" max="100" step="1"></label>
+        <label>Opacity <output id="headerOpacity-output"></output><input id="headerOpacity" type="range" min="0" max="100" step="1"></label>
+        <label>Border width <output id="headerBorder-output"></output><input id="headerBorder" type="range" min="0" max="10" step="0.5"></label>
+        <label>Border colour<input id="headerBorderColor" type="color"></label>
+        <label>Background<input id="headerBg" type="color"></label>
+      </section>
+
+      <section class="control-section">
+        <h2>Whole hero</h2>
+        <label>Canvas height <output id="canvasHeight-output"></output><input id="canvasHeight" type="range" min="35" max="210" step="1"></label>
+        <div class="field-row">
+          <label>Hero<input id="heroBg" type="color"></label>
+          <label>Below<input id="pageBg" type="color"></label>
+        </div>
+      </section>
+
+      <section class="control-section help">
+        <strong>Finish karne ke baad</strong>
+        <p>Desktop aur Mobile dono set karo. Phir <b>Copy Settings</b> dabakar copied data chat mein paste kar dena.</p>
+      </section>
+      <textarea id="result" class="result" readonly aria-label="Exported settings"></textarea>
+    </aside>
+  </main>
+</body>
+</html>

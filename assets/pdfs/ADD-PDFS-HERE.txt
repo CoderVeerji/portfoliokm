@@ -1,0 +1,2 @@
+Place project PDFs in this folder, then set each project's pdf path in content.js.
+Example: pdf: 'assets/pdfs/foundation.pdf'
