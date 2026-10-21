@@ -1,15 +1,14 @@
-# Image replacement checklist
+# Project image mapping
 
-The current images are placeholders.
+The portfolio now uses the supplied project images in `assets/projects/`:
 
-| File | Used for | Recommended size |
-|---|---|---|
-| `projects/project-01.jpg` | Foundation | 1200 × 1600 px or larger |
-| `projects/project-02.jpg` | On Site | 1200 × 1600 px or larger |
-| `projects/project-03.jpg` | Living Sensory Archive | 1200 × 1600 px or larger |
-| `projects/project-04.jpg` | The Beauty of Imperfection | 1200 × 1600 px or larger |
-| `projects/project-05.jpg` | Furnishing Sense | 1200 × 1600 px or larger |
-| `projects/project-06.jpg` | Residential Project I | 1200 × 1600 px or larger |
-| `portrait.jpg` | About page portrait | 1200 × 1500 px or larger |
+| Project | Image |
+|---|---|
+| Foundation | `Foundation.jpg.jpeg` |
+| On Site | `On-site.jpg.jpeg` |
+| Living Sensory Archive | `Living-sens.jpg.jpeg` |
+| The Beauty of Imperfection | `Beauty-of-imperfection.jpg.jpeg` |
+| Furnishing Sense | `Furnishing-sense.jpg.jpeg` |
+| Residential Project I | `Residential-project.jpg.jpeg` |
 
-Keep the same filenames for instant replacement. Use high-quality JPG files exported around 80–88% quality to keep the shared folder lightweight.
+To change an image later, replace its file or update the corresponding `image` path in `content.js`. The portfolio uses these paths for both the home page and Work section.

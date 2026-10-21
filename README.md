@@ -14,6 +14,6 @@ The project title, image and diagonal arrow then open that PDF inside the portfo
 
 ## Edit content and images
 
-Edit project titles, contact details and PDF paths in `content.js`. Replace images in `assets/projects/` while keeping their filenames, or update the paths in `content.js`.
+Edit project titles, contact details and PDF paths in `content.js`. The six supplied project images are mapped there; see `assets/REPLACE-IMAGES.md` for the filename-to-project list.
 
 Colours: `#26141A` background, `#DBCCB5` text, white hero and scrolling circles, and `#847225` circle-over-text accent. Unbounded is used for headings and navigation; Poppins is used for body copy. Fonts are bundled in `assets/fonts/`.

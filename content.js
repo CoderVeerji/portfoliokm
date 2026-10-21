@@ -29,7 +29,7 @@ window.PORTFOLIO = {
       subtitle: '(Amity)',
       type: 'Interior Design',
       year: '2021—2025',
-      image: 'assets/projects/project-01.jpg',
+      image: 'assets/projects/Foundation.jpg.jpeg',
       pdf: '',
       description: 'An early body of work exploring proportion, planning, materials and the foundations of an interior design practice.'
     },
@@ -39,7 +39,7 @@ window.PORTFOLIO = {
       subtitle: '(Hans & Associates)',
       type: 'Residential Interiors',
       year: '2024—2025',
-      image: 'assets/projects/project-02.jpg',
+      image: 'assets/projects/On-site.jpg.jpeg',
       pdf: '',
       description: 'A study of how drawings, details and material decisions are translated through collaboration on site.'
     },
@@ -49,7 +49,7 @@ window.PORTFOLIO = {
       subtitle: '(University of Edinburgh)',
       type: 'Spatial Design',
       year: '2025',
-      image: 'assets/projects/project-03.jpg',
+      image: 'assets/projects/Living-sens.jpg.jpeg',
       pdf: '',
       description: 'A spatial investigation into memory, perception and the ways sensory experiences can be collected and reactivated.'
     },
@@ -59,7 +59,7 @@ window.PORTFOLIO = {
       subtitle: '(IWAARI)',
       type: 'Research Paper',
       year: '2024',
-      image: 'assets/projects/project-04.jpg',
+      image: 'assets/projects/Beauty-of-imperfection.jpg.jpeg',
       pdf: '',
       description: 'Research into imperfection as a design language, considering patina, irregularity and the emotional value of the handmade.'
     },
@@ -69,7 +69,7 @@ window.PORTFOLIO = {
       subtitle: '(Amazon)',
       type: 'Styling Guide Book',
       year: '2025',
-      image: 'assets/projects/project-05.jpg',
+      image: 'assets/projects/Furnishing-sense.jpg.jpeg',
       pdf: '',
       description: 'A practical furnishing and styling guide focused on colour, texture, scale and building a coherent home over time.'
     },
@@ -79,7 +79,7 @@ window.PORTFOLIO = {
       subtitle: '(Aggarwal Residence)',
       type: 'Interior Style Project',
       year: '2024—2025',
-      image: 'assets/projects/project-06.jpg',
+      image: 'assets/projects/Residential-project.jpg.jpeg',
       pdf: '',
       description: 'A residential interior shaped around warmth, layered materials and an understated relationship between objects and architecture.'
     }
